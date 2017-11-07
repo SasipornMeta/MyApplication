@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.sasiporn.myapplication.R;
 
@@ -14,6 +15,35 @@ import com.example.sasiporn.myapplication.R;
  */
 
 public class MainFragment extends Fragment{
+
+//  Mamager Worked after onCreateView Success
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+//       Regiter Conterller
+
+        regiterConterller();
+
+
+    }      // Main Method
+
+    private void regiterConterller() {
+        TextView textView = getView().findViewById(R.id.txtRegister);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+//                Replace Fragment
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentFragmentMain, new RegisterFragment())
+                        .addToBackStack(null)
+                        .commit();
+
+            }   // OnClick
+        });
+    }
 
     @Nullable
     @Override
