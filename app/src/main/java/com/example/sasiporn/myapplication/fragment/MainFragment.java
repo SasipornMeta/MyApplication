@@ -1,5 +1,6 @@
 package com.example.sasiporn.myapplication.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sasiporn.myapplication.R;
+import com.example.sasiporn.myapplication.SalerActivity;
 import com.example.sasiporn.myapplication.utility.GetAllData;
 import com.example.sasiporn.myapplication.utility.MyAlert;
 import com.example.sasiporn.myapplication.utility.MyConstant;
@@ -102,6 +104,18 @@ public class MainFragment extends Fragment{
             } else if (passwordString.equals(userStrings1[4])) {
                 Toast.makeText(getActivity(), "Welcome" + userStrings1[1],
                         Toast.LENGTH_SHORT).show();
+
+                if (userStrings1[2].equals("Saler")) {
+                    //       Saler
+                    Intent intent = new Intent(getActivity(), SalerActivity.class);
+                    intent.putExtra("Login", userStrings1);
+                    getActivity().startActivity(intent);
+
+                } else {
+                    //       Buyer
+
+                }
+
             } else {
                 MyAlert myAlert = new MyAlert(getActivity());
                 myAlert.myDialog("Password Fals",
