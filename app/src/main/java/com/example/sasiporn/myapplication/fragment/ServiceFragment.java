@@ -3,11 +3,13 @@ package com.example.sasiporn.myapplication.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.sasiporn.myapplication.MyServiceActivity;
 import com.example.sasiporn.myapplication.R;
 
 /**
@@ -33,8 +35,16 @@ public class ServiceFragment extends Fragment{
         String[] strings = getArguments().getStringArray("Login");
         Log.d("9novV1", "Login(1) on ServiceFragment ==> " + strings[1]);
 
+//        Create Toolbar
+        createToolbar(strings[1]);
 
+    }
 
+    private void createToolbar(String strTitle) {
+        Toolbar toolbar = getView().findViewById(R.id.toolbarService);
+        ((MyServiceActivity)getActivity()).setSupportActionBar(toolbar);
+        ((MyServiceActivity) getActivity()).getSupportActionBar().setTitle(strTitle);
+        ((MyServiceActivity) getActivity()).getSupportActionBar().setSubtitle("Who Loged");
 
     }
 
