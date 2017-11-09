@@ -6,9 +6,11 @@ package com.example.sasiporn.myapplication.utility;
 
 public class MyConstant {
 
-    private String urlPostData = "http://androidthai.in.th/rmuts/addDataSasiporn.php";
+    // private String urlPostData = "http://androidthai.in.th/rmuts/addDataSasiporn.php";
+    private String urlPostData = "http://androidthai.in.th/rmuts/addDataMaster.php";
 
-    private String urlGetAllUser = "http://androidthai.in.th/rmuts/getAllDataSasiporn.php";
+    // private String urlGetAllUser = "http://androidthai.in.th/rmuts/getAllDataSasiporn.php";
+    private String urlGetAllUser = "http://androidthai.in.th/rmuts/getAllDataMaster.php";
 
     public String getUrlGetAllUser() {
         return urlGetAllUser;
